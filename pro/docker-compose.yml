@@ -1,0 +1,13 @@
+services:
+  database:
+    image: 'postgres:latest'
+    ports:
+      - 15432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+    networks:
+      - postgres-network
+
+networks: 
+  postgres-network:
+    driver: bridge
